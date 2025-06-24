@@ -1,6 +1,6 @@
 # MemChat
 
-Bring memory to AI characters.
+Chat & memory for AI characters.
 
 ## Installation
 
@@ -16,7 +16,7 @@ To set up the project, follow these steps:
     uv venv
     uv pip install .
     ```
-    
+
 3.  **For development, install with editable flag:**
     ```bash
     uv pip install -e .
