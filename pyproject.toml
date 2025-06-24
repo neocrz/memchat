@@ -1,0 +1,17 @@
+[project]
+name = "memchat"
+version = "0.1.0"
+description = "Chat & Memory system for AI characters"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.1",
+    "pillow>=11.2.1",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+memchat-app = "memchat.main:run"
+
+[tool.setuptools.packages]
+find = {where = ["src"]}
