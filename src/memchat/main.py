@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 class chat_agent:
 
-    def __init__(self, character: AICharacter): # TODO: LLM provider interface for this
+    def __init__(self, character: AICharacter, chat_historic = None): # TODO: LLM provider interface for this; 
         self.character = character
         pass
 
-    def run():
+    def run(): # TODO: Add message handling, historic logging (into json file); Call aux. Agents.
         while True:
             user_input = input("You: ")
             
@@ -35,8 +35,8 @@ def run():
     else:
         logger.error("Failed to load character.")
 
-    first_message = char.get_initial_llm_message(username)
-    logger.debug(first_message)
+    context_block, first_message = char.get_initial_llm_message(username)
+    logger.info(first_message)
 
 
 if __name__ == "__main__":

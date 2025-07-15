@@ -479,13 +479,13 @@ class AICharacter:
         else:
             context_block += "No specific context provided.\n---\n\n"
 
-        conversation_begins_line = "--- Conversation between {{char}} and {{user}} has begun ---\n\n"
-        
-        final_string = context_block + conversation_begins_line + chosen_first_message
-
-        final_string = self.parse_names(user_name, final_string)
-
-        return final_string
+        # conversation_begins_line = "--- Conversation between {{char}} and {{user}} has begun ---\n\n"
+        # final_string = context_block + conversation_begins_line + chosen_first_message
+        # final_string = self.parse_names(user_name, final_string)
+        # return final_string
+        context_block = self.parse_names(user_name, context_block)
+        chosen_first_message = self.parse_names(user_name, chosen_first_message)
+        return context_block, chosen_first_message
 
     def parse_names(self, user_name: str, text: str):
 
